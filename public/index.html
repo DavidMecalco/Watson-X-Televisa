@@ -18,14 +18,57 @@
 
         <main class="flex-grow-1 overflow-auto p-4 chat-window">
             <div id="chat-container" class="container-fluid d-flex flex-column gap-3">
+                
+                <div class="message-container d-flex flex-row align-items-start">
+                    <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
+                    <div class="message-assistant">
+                        <p>Hola, soy tu Agente de Investigación de Audiencias. Estoy aquí para ayudarte a analizar la información de Televisa Univision. ¿En qué puedo ayudarte?</p>
+                        <p>Puedes empezar con una pregunta como: "Resume los hallazgos del focus group sobre la nueva telenovela 'La Escalera al Cielo'."</p>
+                    </div>
                 </div>
+
+                <div class="message-container d-flex flex-row-reverse align-items-start">
+                    <img src="./assets/images/user-avatar.png" alt="Avatar del Usuario" class="avatar">
+                    <div class="message-user">
+                        <p>Necesito un resumen de los puntos clave del reporte de seguimiento del programa 'El Mañanero'.</p>
+                    </div>
+                </div>
+
+                <div class="message-container d-flex flex-row align-items-start">
+                    <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
+                    <div class="message-assistant">
+                        <p>Claro, aquí tienes un resumen del reporte de seguimiento del programa 'El Mañanero':</p>
+                        <ul>
+                            <li>**Audiencia:** Se mantuvo estable en el último trimestre, con un pico de audiencia del 15% en la franja de las 9:00 AM.</li>
+                            <li>**Análisis de Sentimiento:** El 75% de los comentarios en redes sociales fue positivo, destacando la sección de noticias.</li>
+                            <li>**Recomendaciones:** Se sugiere mantener el formato actual y considerar una mayor interacción con la audiencia a través de encuestas en vivo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </main>
 
         <div class="p-3 bg-light border-top">
             <div class="container-fluid">
                 <div class="input-group">
+                    <div class="btn-group me-2" role="group">
+                        <button class="btn btn-outline-secondary" type="button" title="Subir video">
+                            <i class="bi bi-camera-video"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary" type="button" title="Agregar adjuntos">
+                            <i class="bi bi-paperclip"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary" type="button" title="Subir imagen">
+                            <i class="bi bi-image"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary" type="button" title="Grabar voz">
+                            <i class="bi bi-mic"></i>
+                        </button>
+                    </div>
+                    
                     <textarea id="userInput" class="form-control" rows="1" placeholder="Haz una pregunta o ingresa un comando..." aria-label="Input de usuario"></textarea>
-                    <button class="btn btn-primary" type="button" id="sendButton">
+                    <button class="btn btn-primary" type="button" id="sendButton" title="Enviar">
                         <i class="bi bi-send-fill"></i>
                     </button>
                 </div>
