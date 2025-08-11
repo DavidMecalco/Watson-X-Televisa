@@ -12,6 +12,9 @@ El proyecto permite:
 
 La implementación de este agente de IA busca reducir significativamente los tiempos de investigación, optimizar recursos y coadyuvar a una toma de decisiones más rápida y precisa por parte de los equipos de producción, escritores y analistas.
 
+<img width="1919" height="913" alt="image" src="https://github.com/user-attachments/assets/619e7978-6850-4476-8ecf-ab54f13bb162" />
+
+
 ## Arquitectura de la Solución
 
 La solución se construye sobre la plataforma de IA y datos de IBM watsonx, utilizando una arquitectura modular que conecta sus componentes principales para un flujo de trabajo optimizado.
