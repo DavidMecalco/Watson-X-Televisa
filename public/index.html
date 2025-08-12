@@ -9,74 +9,106 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="d-flex flex-column h-100">
-        <header class="bg-white border-bottom shadow-sm">
-            <div class="container-fluid p-3">
-                <h1 class="h5 mb-0">Agente de Investigación IA</h1>
+    <div class="d-flex h-100 flex-column flex-lg-row">
+
+        <aside class="sidebar d-none d-lg-flex flex-column p-3 bg-dark text-white">
+            <h2 class="h5 mb-4">Conversaciones Recientes</h2>
+            <ul id="conversation-history" class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <i class="bi bi-chat-left-text me-2"></i>
+                        Resumen del Reporte Postmortem
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-chat-left-text me-2"></i>
+                        Análisis de Sentimiento 'Mañanero'
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-chat-left-text me-2"></i>
+                        Tendencias de Audiencia USA
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-chat-left-text me-2"></i>
+                        Predicción de éxito de 'La Escalera...'
+                    </a>
+                </li>
+            </ul>
+            <div class="mt-auto">
+                <hr class="text-white">
+                <a href="#" class="nav-link text-white">
+                    <i class="bi bi-person-circle me-2"></i>
+                    Usuario: David
+                </a>
             </div>
-        </header>
+        </aside>
 
-        <main class="flex-grow-1 overflow-auto p-4 chat-window">
-            <div id="chat-container" class="container-fluid d-flex flex-column gap-3">
-                
-                <div class="message-container d-flex flex-row align-items-start">
-                    <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
-                    <div class="message-assistant">
-                        <p>Hola, soy tu Agente de Investigación de Audiencias. Estoy aquí para ayudarte a analizar la información de Televisa Univision. ¿En qué puedo ayudarte?</p>
-                        <p>Puedes empezar con una pregunta como: "Resume los hallazgos del focus group sobre la nueva telenovela 'La Escalera al Cielo'."</p>
-                    </div>
-                </div>
+        <div class="main-content d-flex flex-column flex-grow-1">
 
-                <div class="message-container d-flex flex-row-reverse align-items-start">
-                    <img src="./assets/images/user-avatar.png" alt="Avatar del Usuario" class="avatar">
-                    <div class="message-user">
-                        <p>Necesito un resumen de los puntos clave del reporte de seguimiento del programa 'El Mañanero'.</p>
-                    </div>
-                </div>
-
-                <div class="message-container d-flex flex-row align-items-start">
-                    <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
-                    <div class="message-assistant">
-                        <p>Claro, aquí tienes un resumen del reporte de seguimiento del programa 'El Mañanero':</p>
-                        <ul>
-                            <li>**Audiencia:** Se mantuvo estable en el último trimestre, con un pico de audiencia del 15% en la franja de las 9:00 AM.</li>
-                            <li>**Análisis de Sentimiento:** El 75% de los comentarios en redes sociales fue positivo, destacando la sección de noticias.</li>
-                            <li>**Recomendaciones:** Se sugiere mantener el formato actual y considerar una mayor interacción con la audiencia a través de encuestas en vivo.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <div class="p-3 bg-light border-top">
-            <div class="container-fluid">
-                <div class="input-group">
-                    <div class="btn-group me-2" role="group">
-                        <button class="btn btn-outline-secondary" type="button" title="Subir video">
-                            <i class="bi bi-camera-video"></i>
-                        </button>
-                        <button class="btn btn-outline-secondary" type="button" title="Agregar adjuntos">
-                            <i class="bi bi-paperclip"></i>
-                        </button>
-                        <button class="btn btn-outline-secondary" type="button" title="Subir imagen">
-                            <i class="bi bi-image"></i>
-                        </button>
-                        <button class="btn btn-outline-secondary" type="button" title="Grabar voz">
-                            <i class="bi bi-mic"></i>
-                        </button>
-                    </div>
-                    
-                    <textarea id="userInput" class="form-control" rows="1" placeholder="Haz una pregunta o ingresa un comando..." aria-label="Input de usuario"></textarea>
-                    <button class="btn btn-primary" type="button" id="sendButton" title="Enviar">
-                        <i class="bi bi-send-fill"></i>
+            <header class="d-lg-none bg-white border-bottom shadow-sm">
+                <div class="container-fluid p-3 d-flex justify-content-between align-items-center">
+                    <h1 class="h5 mb-0">Agente de Investigación IA</h1>
+                    <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                        <i class="bi bi-list"></i>
                     </button>
                 </div>
-            </div>
-        </div>
-    </div>
+            </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="chat.js"></script>
-</body>
-</html>
+            <main class="flex-grow-1 overflow-auto p-4 chat-window">
+                <div id="chat-container" class="container-fluid d-flex flex-column gap-3">
+                    
+                    <div class="message-container d-flex flex-row align-items-start">
+                        <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
+                        <div class="message-assistant">
+                            <p>Hola, soy tu Agente de Investigación de Audiencias. ¿En qué puedo ayudarte hoy?</p>
+                            <p>Puedes empezar con una pregunta como: "Resume los hallazgos del focus group sobre la nueva telenovela 'La Escalera al Cielo'."</p>
+                        </div>
+                    </div>
+
+                    <div class="message-container d-flex flex-row-reverse align-items-start">
+                        <img src="./assets/images/user-avatar.png" alt="Avatar del Usuario" class="avatar">
+                        <div class="message-user">
+                            <p>Necesito un resumen de los puntos clave del reporte de seguimiento del programa 'El Mañanero'.</p>
+                        </div>
+                    </div>
+
+                    <div class="message-container d-flex flex-row align-items-start">
+                        <img src="./assets/images/watson-avatar.png" alt="Avatar del Agente" class="avatar">
+                        <div class="message-assistant">
+                            <p>Claro, aquí tienes un resumen del reporte de seguimiento del programa 'El Mañanero':</p>
+                            <ul>
+                                <li>**Audiencia:** Se mantuvo estable en el último trimestre, con un pico de audiencia del 15% en la franja de las 9:00 AM.</li>
+                                <li>**Análisis de Sentimiento:** El 75% de los comentarios en redes sociales fue positivo, destacando la sección de noticias.</li>
+                                <li>**Recomendaciones:** Se sugiere mantener el formato actual y considerar una mayor interacción con la audiencia a través de encuestas en vivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <div class="p-3 bg-light border-top">
+                <div class="container-fluid">
+                    <div class="input-group">
+                        <div class="btn-group me-2" role="group">
+                            <button class="btn btn-outline-secondary" type="button" title="Subir video">
+                                <i class="bi bi-camera-video"></i>
+                            </button>
+                            <button class="btn btn-outline-secondary" type="button" title="Agregar adjuntos">
+                                <i class="bi bi-paperclip"></i>
+                            </button>
+                            <button class="btn btn-outline-secondary" type="button" title="Subir imagen">
+                                <i class="bi bi-image"></i>
+                            </button>
+                            <button class="btn btn-outline-secondary" type="button" title="Grabar voz">
+                                <i class="bi bi-mic"></i>
+                            </button>
+                        </div>
+                        
+                        <textarea id="userInput" class="form-control" rows="1" placeholder="Haz una pregunta o ingresa un comando..." aria-label="Input de usuario"></textarea>
+                        <button class="btn btn-primary" type="button" id="send

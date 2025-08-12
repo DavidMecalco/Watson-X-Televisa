@@ -6,13 +6,34 @@ body, html {
     background-color: #f0f4f9;
 }
 
-.d-flex.flex-column.h-100 {
+.d-flex.h-100 {
     min-height: 100vh;
+}
+
+/* Sidebar para escritorio */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar .nav-link {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #495057;
+}
+
+/* Contenido principal */
+.main-content {
+    background-color: #f0f4f9;
 }
 
 /* Ventana de chat */
 .chat-window {
-    background-color: #f0f4f9;
     padding-bottom: 7rem;
 }
 
@@ -103,4 +124,17 @@ body, html {
 
 .btn-group .btn:hover {
     background-color: #e9ecef;
+}
+
+/* Estilos responsivos */
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        padding-top: 0;
+    }
+    .chat-window {
+        padding-top: 0;
+    }
 }
