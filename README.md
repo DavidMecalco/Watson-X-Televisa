@@ -12,7 +12,9 @@ El proyecto permite:
 
 La implementación de este agente de IA busca reducir significativamente los tiempos de investigación, optimizar recursos y coadyuvar a una toma de decisiones más rápida y precisa por parte de los equipos de producción, escritores y analistas.
 
-<img width="1919" height="913" alt="image" src="https://github.com/user-attachments/assets/619e7978-6850-4476-8ecf-ab54f13bb162" />
+
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/e0774b6e-b55f-46ab-b6bd-3d5682d7c866" />
+
 
 
 ## Arquitectura de la Solución
@@ -39,23 +41,6 @@ Para ejecutar y desarrollar el proyecto, se necesitan los siguientes requisitos:
 
 La estructura de carpetas sigue una convención moderna y modular para facilitar el desarrollo y la escalabilidad.
 
-/research-agent-televisa
-├── /public
-│   ├── index.html
-│   └── /assets
-│       ├── /images
-│       └── /styles
-├── /src
-│   ├── /components
-│   │   ├── /Chatbot
-│   │   ├── /Dashboard
-│   │   └── /Layout
-│   ├── /services
-│   │   └── watsonx-api.js
-│   ├── /utils
-│   └── App.js
-├── package.json
-└── README.md
 
 ## Guía de Instalación y Uso
 
