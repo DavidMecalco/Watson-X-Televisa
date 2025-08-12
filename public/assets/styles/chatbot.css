@@ -1,9 +1,21 @@
+/* Paleta de colores */
+:root {
+    --color-dark-bg: #1a1e29;
+    --color-dark-secondary: #132d46;
+    --color-primary: #01c38e;
+    --color-light: #ffffff;
+    --color-text: #ffffff;
+    --color-text-secondary: #a0a8b4;
+    --color-border: #2e3540;
+}
+
 /* Estilos generales */
 body, html {
     height: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f4f9;
+    background-color: var(--color-dark-secondary);
+    color: var(--color-text);
 }
 
 .d-flex.h-100 {
@@ -14,73 +26,101 @@ body, html {
 .sidebar {
     width: 280px;
     flex-shrink: 0;
-    border-right: 1px solid #dee2e6;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text);
 }
 
 .sidebar .nav-link {
     border-radius: 0.5rem;
     padding: 0.75rem 1rem;
     transition: background-color 0.2s ease;
+    color: var(--color-text);
 }
 
 .sidebar .nav-link.active {
-    background-color: #0d6efd;
-    color: white !important;
+    background-color: var(--color-primary);
+    color: var(--color-dark-bg) !important;
+    font-weight: 500;
 }
 
 .sidebar .nav-link:not(.active):hover {
-    background-color: #495057;
+    background-color: var(--color-dark-secondary);
 }
 
 .sidebar .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-dark-bg);
+    font-weight: 600;
     border-radius: 20px !important;
 }
 
-.sidebar .form-control {
-    border-radius: 0 10px 10px 0;
-    border: none;
-    background-color: #495057;
-    color: white;
+.sidebar .btn-primary:hover {
+    background-color: #01a378;
+    border-color: #01a378;
 }
 
+.sidebar .form-control,
 .sidebar .input-group-text {
-    border-radius: 10px 0 0 10px;
-    border: none;
-    background-color: #495057;
-    color: white;
+    background-color: var(--color-dark-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
 }
 
-/* Estilo del logo de Watson */
+.sidebar .form-control::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.sidebar hr {
+    border-top: 1px solid var(--color-border);
+}
+
+/* Contenido principal */
+.main-content {
+    background-color: var(--color-dark-secondary);
+    color: var(--color-text);
+}
+
+/* Encabezado */
+header {
+    min-height: 70px;
+    background-color: var(--color-dark-bg) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
 .watson-logo {
-    width: 24px;
-    height: 24px;
-}
-
-/* Avatar en el menú lateral */
-.avatar-sm {
     width: 28px;
     height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
-/* Avatar en el encabezado */
-.avatar-header {
+.model-info {
+    color: var(--color-text-secondary) !important;
+}
+
+.avatar-header,
+.avatar-sm {
     width: 38px;
     height: 38px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-/* Contenido principal */
-.main-content {
-    background-color: #f0f4f9;
+.avatar-sm {
+    width: 28px;
+    height: 28px;
 }
 
-/* Encabezado */
-header {
-    min-height: 70px;
+.main-content .btn-outline-secondary {
+    background-color: var(--color-dark-secondary);
+    border-color: var(--color-border);
+    color: var(--color-text);
 }
+
+.main-content .btn-outline-secondary:hover {
+    background-color: #2e3540;
+    color: var(--color-text);
+}
+
 
 /* Ventana de chat */
 .chat-window {
@@ -101,8 +141,8 @@ header {
 
 /* Estilo de los mensajes del usuario */
 .message-user {
-    background-color: #0d6efd;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-dark-bg);
     border-radius: 20px 20px 5px 20px;
     padding: 10px 15px;
     max-width: 75%;
@@ -110,17 +150,25 @@ header {
 
 /* Estilo de los mensajes del asistente */
 .message-assistant {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-border);
     border-radius: 20px 20px 20px 5px;
     padding: 10px 15px;
     max-width: 75%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .message-assistant ul {
     margin-bottom: 0;
     padding-left: 20px;
+    color: var(--color-text-secondary);
+}
+
+.message-assistant p,
+.message-assistant li {
+    color: var(--color-text-secondary);
+}
+.message-assistant strong {
+    color: var(--color-text);
 }
 
 /* Estilo del avatar */
@@ -133,6 +181,9 @@ header {
 }
 
 /* Estilo para la caja de texto */
+.p-3 {
+    background-color: var(--color-dark-bg) !important;
+}
 .input-group {
     max-width: 800px;
     margin: 0 auto;
@@ -140,15 +191,24 @@ header {
 }
 
 #userInput {
+    background-color: var(--color-dark-secondary);
+    border-color: var(--color-border);
+    color: var(--color-text);
     border-radius: 25px !important;
-    border-color: #e0e0e0;
     resize: none;
     box-shadow: none !important;
     padding: 10px 20px;
     line-height: 1.5;
 }
 
+#userInput::placeholder {
+    color: var(--color-text-secondary);
+}
+
 #sendButton {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-dark-bg);
     border-radius: 50% !important;
     padding: 0.5rem 0.75rem;
     height: 45px;
@@ -157,6 +217,10 @@ header {
     align-items: center;
     justify-content: center;
     margin-left: 5px;
+}
+#sendButton:hover {
+    background-color: #01a378;
+    border-color: #01a378;
 }
 
 .btn-group .btn {
@@ -169,11 +233,21 @@ header {
     justify-content: center;
     background-color: transparent;
     border: none;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 .btn-group .btn:hover {
-    background-color: #e9ecef;
+    background-color: var(--color-dark-secondary);
+}
+
+/* Offcanvas */
+.offcanvas {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text);
+}
+
+.offcanvas .btn-close {
+    filter: invert(1);
 }
 
 /* Estilos responsivos */
@@ -197,9 +271,6 @@ header {
     .avatar-header {
         width: 32px;
         height: 32px;
-    }
-    .main-content .btn-outline-secondary {
-        font-size: 0.8rem;
     }
     .main-content .btn-outline-secondary i {
         margin-right: 0 !important;
